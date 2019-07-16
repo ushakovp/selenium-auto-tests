@@ -1,8 +1,8 @@
 import pytest
 from selenium import webdriver
 
-def pytest_adoption(parser):
-    parser.adoption('--browser_name', action='store', default=None, help="Choose browser: Chrome or firefox")
+def pytest_addoption(parser):
+    parser.addoption('--browser_name', action='store', default='chrome', help="Choose browser: Chrome or firefox")
 
 @pytest.fixture(scope='function')
 def browser(request):
